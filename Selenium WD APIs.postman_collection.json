@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "0a143b0f-cdca-4949-a5df-707fdfdd88b5",
+		"name": "Selenium WD APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49018036",
+		"_collection_link": "https://sudheer-nidamanuri45-6139013.postman.co/workspace/BankAccount-API~3ffe011b-2331-472c-8265-aa03655d4a36/collection/49018036-0a143b0f-cdca-4949-a5df-707fdfdd88b5?action=share&source=collection_link&creator=49018036"
+	},
+	"item": [
+		{
+			"name": "1-LaunchBrowser(POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"capabilities\":{\n        \"alwaysMatch\":{\n            \"browserName\":\"chrome\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4444/session",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-EnterURL(POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\":\"https://www.google.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4444/session/c94ac0ce2f1f4c7587ee41eea0928956/url",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"session",
+						"c94ac0ce2f1f4c7587ee41eea0928956",
+						"url"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-FindElement-Search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"using\":\"xpath\",\n    \"value\":\"//textarea[@name='q']\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4444/session/c94ac0ce2f1f4c7587ee41eea0928956/element",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"session",
+						"c94ac0ce2f1f4c7587ee41eea0928956",
+						"element"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-SendKeys",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\":\"Hello,Sudheer!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4444/session/f.C99F13A0D971497A0F4794BE0877BCA4.d.7D2B394963134F41F6493DB54A024C28.e.1/value",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444",
+					"path": [
+						"session",
+						"f.C99F13A0D971497A0F4794BE0877BCA4.d.7D2B394963134F41F6493DB54A024C28.e.1",
+						"value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5-FindLink",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "6-ClickOnLink",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "7-CloseBrowser",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

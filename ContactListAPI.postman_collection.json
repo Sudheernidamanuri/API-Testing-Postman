@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "04f1b123-a1ab-473f-8265-cd8cfc9f2111",
+		"name": "ContactListAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49018036",
+		"_collection_link": "https://sudheer-nidamanuri45-6139013.postman.co/workspace/BankAccount-API~3ffe011b-2331-472c-8265-aa03655d4a36/collection/49018036-04f1b123-a1ab-473f-8265-cd8cfc9f2111?action=share&source=collection_link&creator=49018036"
+	},
+	"item": [
+		{
+			"name": "Login API-Create JWT Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response=pm.response.json();",
+							"const tokenID=response.token;",
+							"console.log(\"my token ID: \"+tokenID);",
+							"pm.collectionVariables.set(\"mytokenID\",tokenID);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{mytokenID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"{{email}}\",\n    \"password\":\"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Contact Information",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{mytokenID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/contacts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{mytokenID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"firstName\": \"Suresh\",\n    \"lastName\": \"Raina\",\n    \"birthdate\": \"1978-05-29\",\n    \"email\": \"raina@gmail.com\",\n    \"phone\": \"8690846892\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/contacts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{mytokenID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Dhoni\",\n    \"lastName\": \"MS\",\n    \"birthdate\": \"1986-09-29\",\n    \"email\": \"dhoni@gmail.com\",\n    \"phone\": \"9878846892\",\n   \"city\": \"Ranchi\",\n    \"country\": \"India\",\n    \"postalCode\": \"654789\",\n    \"stateProvince\": \"Jaipur\",\n    \"street1\": \"cricket street\",\n    \"street2\": \"ipl\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/contacts/68e7227dea724c0015aff558",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts",
+						"68e7227dea724c0015aff558"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Contact",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{mytokenID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/contacts/68e7227dea724c0015aff558",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts",
+						"68e7227dea724c0015aff558"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout API-Expire JWT Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{mytokenID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/users/logout",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "mytokenID",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "233f0215-571f-4a95-97c7-6164908029ec",
+		"name": "MovieTicketBookingSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49018036",
+		"_collection_link": "https://sudheer-nidamanuri45-6139013.postman.co/workspace/BankAccount-API~3ffe011b-2331-472c-8265-aa03655d4a36/collection/49018036-233f0215-571f-4a95-97c7-6164908029ec?action=share&source=collection_link&creator=49018036"
+	},
+	"item": [
+		{
+			"name": "getAllBookings",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "322b03bf-7990-49c4-a2b2-8b25e994f8b3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "2d1f0064-a644-4052-86ca-470f8905f171",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/getAllBookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getAllBookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBooking",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "322b03bf-7990-49c4-a2b2-8b25e994f8b3",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "322b03bf-7990-49c4-a2b2-8b25e994f8b3",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookingid\":101,\n    \"ticketprice\":150,\n    \"moviename\":\"Kantara Chapter 1\",\n    \"theatrename\":\"Gorantla Multiplex\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addBooking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addBooking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
